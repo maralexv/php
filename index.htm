@@ -20,9 +20,20 @@
     <div class="container-md">
         <div class="row">
             <div class="col-sm">
-                <h1>user name form</h1>
+                <form action="user.php" method="post">
+                    <input type="email" class="form-control" id="user" placeholder="Email: you@example.com">
+                </form>
             </div>
-        </div><br>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-sm">
+                <form action="newnote.php" methid="post">
+                    <input type="text" class="form-control" id="note" placeholder="New note">
+                </form>
+            </div>
+        </div>
+        <br>
         <div class="row">
             <div class="col-sm">
                 <p>notes go here</p>
