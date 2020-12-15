@@ -1,13 +1,12 @@
 <?php include 'header.php';?>
 
-<body>
     <div class="container-md">
-        <div class="row" id="userin">
+        <div class="row">
             <div class="col-sm">
-                <h4>Please login:</h4>
-                <form class="form-inline" id="user" method="POST" action="mynotes.php">
+                <h5>let me know who you are (provide your email please):</h5>
+                <form class="form-inline" method="POST" action="mynotes.php">
                     <input type="email" class="form-control" name="user" placeholder="Email: you@example.com">
-                    <input type="submit" class="btn btn-outline-primary" value="login">
+                    <input type="submit" class="btn btn-outline-primary" value="submit">
                 </form>
             </div>
         </div>

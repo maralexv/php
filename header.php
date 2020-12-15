@@ -20,3 +20,10 @@
     </style>
 
 </head>
+
+<body>
+<?php 
+    $user;
+    $userlist;
+    $notes;
+?>
