@@ -3,7 +3,7 @@
     <div class="container-md">
         <div class="row" id="userout">
             <div class="col-sm">
-                <h4><?php $GLOBALS['user'] = $_POST['user']; echo $GLOBALS['user'];?></h4>
+                <h4><?php $GLOBALS['user'] = $_POST['user']; echo "hi " . $GLOBALS['user'];?></h4>
             </div>
         </div>
         <br>
