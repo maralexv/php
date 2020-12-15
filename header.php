@@ -14,7 +14,7 @@
             margin-bottom: 3rem;
         }
         input {
-            margin-letf: 8px;
+            margin-left: 8px;
             margin-right: 8px;
         }
     </style>
