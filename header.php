@@ -14,7 +14,6 @@
             margin-bottom: 3rem;
         }
         input {
-            margin-left: 8px;
             margin-right: 8px;
         }
     </style>
@@ -23,7 +22,7 @@
 
 <body>
 <?php 
-    $user;
-    $userlist;
-    $notes;
+    $GLOBALS['user'];
+    $GLOBALS['userlist'] = array("alex@alex.com");
+    $GLOBALS['notes'] = array("alex@alex.com" => array ("note1", "note2", "note3"));
 ?>
