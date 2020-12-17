@@ -24,6 +24,14 @@
             text-align: center;
         }
 
+        .note {
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 1rem;
+            border-bottom: 1px lightgrey solid;
+            text-align: justify;
+        }
+
     </style>
 </head>
 
