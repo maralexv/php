@@ -22,7 +22,7 @@
 
         <div class="row">
             <div class="col-sm">
-                <form class="form-inline" id="newnote" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <form class="form-inline" id="newnote" method="POST" action="">
                     <input type="text" class="form-control" name="newnote" placeholder="new note"/>
                     <input type="submit" class="btn btn-outline-dark" value="add">
                 </form>
