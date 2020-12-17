@@ -1,4 +1,5 @@
-<?php include 'header.php';?>
+<!DOCTYPE html>
+<?php require 'header.php';?>
 
     <div class="container-md">
         <div class="row">

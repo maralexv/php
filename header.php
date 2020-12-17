@@ -1,17 +1,3 @@
-<?php
-// Start the session
-session_start();
-?>
-
-<!DOCTYPE html>
-
-<?php
-$cookie_name = "thisuser";
-$cookie_value;
-// setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 seconds = 1 day
-setcookie($cookie_name, $cookie_value, time() + (60 * 2), "/"); 
-?>
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,15 +8,23 @@ setcookie($cookie_name, $cookie_value, time() + (60 * 2), "/");
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
     <style>
-        body {
+        html {
             margin-top: 3rem;
             margin-bottom: 3rem;
         }
         input {
             margin-right: 8px;
         }
-    </style>
 
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+    </style>
 </head>
 
 <body>

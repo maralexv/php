@@ -8,12 +8,4 @@ $cookievalue;
 if(!isset($_COOKIE[$cookiename])) {
     setcookie($cookiename, $cookievalue,  time()+(60*60*24*30), "/var/www/"); // 60*60*24*30 = 30 days
 }
-
-if(isset($_COOKIE[$cookiename])) {
-    echo "cookie " . $_COOKIE[$cookiename] . "is set";
-    require 'mynotes.php';
-} else {
-    echo "cookie is not set " . count($_COOKIE) . " ";
-    require 'login.php';
-}
 ?>
