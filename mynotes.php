@@ -5,15 +5,18 @@
             <div class="col-sm">
                 <h4>
                     <?php 
-                        // Check whether this user is in the user list
-                        $GLOBALS['user'] = $_POST['user']; 
-                        if (in_array($GLOBALS['user'], $GLOBALS['userlist'])) {
-                            echo "welcome back <strong>" . $GLOBALS['user'] . "</strong> :)";
-                        } else {
-                            // If not, add hi,/her to the user list
-                            $GLOBALS['userlist'][] = $GLOBALS['user'];
-                            echo "how do you do <strong>" . $GLOBALS['user'] . "</strong>";
-                        }
+                    // Store user name in the cookie
+                    $_COOKIE[$cookie_value] = $_POST['user']; 
+                    
+                    // Check if then user in db
+                    // if ()) {
+                    //     echo "welcome back <strong>" . $_COOKIE[$cookie_value] . "</strong> :)";
+                    // } else {
+                    //     // If not, add user to the user db
+                    //      = $_COOKIE[$cookie_value];
+                    //     echo "how do you do <strong>" . $_COOKIE[$cookie_value] . "</strong>";
+                    // }
+                    echo "how do you do <strong>" . $_COOKIE[$cookie_value] . "</strong>";
                     ?>
                 </h4>
             </div>
@@ -31,22 +34,15 @@
         <br>
 
         <?php
-            // Grab value from the newnote and add it to the notes array for the logged user
+        // Grab value from the newnote and add it to the notes db for the logged user
         ?>
 
         <div class="row" id="notes">
             <div class="col-sm">
                 <h4><strong>your notes:</strong></h4>
                 <?php
-                    // loop through the notes array of the user 
-                    foreach ($GLOBALS['notes'] as $user => $notearray) {
-                        if ($user == $GLOBALS['user']) {
-                            // echo each note in <p></p>
-                            foreach ($notearray as $note) {
-                                echo "<p>" . $note . "</p>";
-                            }
-                        }
-                    }
+                // loop through the notes array of the user 
+                
                 ?>
             </div>
         </div>

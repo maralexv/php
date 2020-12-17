@@ -1,4 +1,17 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
+
+<?php
+$cookie_name = "thisuser";
+$cookie_value;
+// setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/"); // 86400 seconds = 1 day
+setcookie($cookie_name, $cookie_value, time() + (60 * 2), "/"); 
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,8 +34,3 @@
 </head>
 
 <body>
-<?php 
-    $GLOBALS['user'];
-    $GLOBALS['userlist'] = array("alex@alex.com");
-    $GLOBALS['notes'] = array("alex@alex.com" => array ("note1", "note2", "note3"));
-?>
