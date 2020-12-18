@@ -3,7 +3,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Notes</title>
-
     <style>
         html {
             margin: 3rem;
@@ -46,7 +45,6 @@
             padding: 1rem;
             border-bottom: 1px lightgrey solid;
         }
-
     </style>
 
     <script>
@@ -100,7 +98,6 @@
             }
         });
     </script>
-
 </head>
 
 <body>
