@@ -34,7 +34,7 @@ if ($q !== "") {
     }
 
     if ($userflag == 0) {
-        $data = array("how do you do ", $q, $user_id);
+        $data = array("how do you do ", $q);
         echo json_encode($data);
 
         $sql = "INSERT INTO users (UserName) VALUES ('$q')";
