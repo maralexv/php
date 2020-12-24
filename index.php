@@ -6,21 +6,51 @@ session_start();
 $cookiename = "usr";
 $cookievalue;
 if(!isset($_COOKIE[$cookiename])) {
-    setcookie($cookiename, $cookievalue,  time()+(60*60*24*30), "/var/www/"); // 60*60*24*30 = 30 days
+    setcookie($cookiename, $cookievalue,  time()+(60*60*24*30), "/var/www/html"); // 60*60*24*30 = 30 days
     // echo "(number of cookies: " . count($_COOKIE) . ")";
 }
-
-// if(isset($_COOKIE[$cookiename])) {
-//     echo "cookie " . $_COOKIE[$cookiename] . "is set";
-//     require 'mynotes.php';
-// } else {
-//     echo "cookie is not set " . count($_COOKIE) . " ";
-//     require 'login.php';
-// }
-
-if (!$_SESSION['user']) {
-    require 'login.php';
-} else {
-    require 'mynotes.php';
-}
 ?>
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+
+    <?php require 'header.php';?>
+
+</head>
+
+<body>
+
+<div id="login">
+    <!-- <form id="loginform" action=""> -->
+        <label for="user">provide your email please:</label>
+        <input type="email" id="user" name="user">
+        <button onclick= "getUser()">submit</button>
+    <!-- </form> -->
+</div>
+
+<div id="userout" style="display: none;">
+    <p><span id="welcome"></span><strong><span id="useremail"></span></strong></p>
+</div>
+
+<div id="newnoteform" style="display: none;">
+    <form id="newnote" action="">
+        <label for="newnotetxt">add your new note:</label>
+        <textarea id="newnotetxt" type="text" name="newnote" rows="3" cols="50">
+        </textarea>
+        <input id="submit" type="submit" value="add">
+    </form>
+</div>
+<br>
+
+<div id="yn" style="display: none;"><span></span></div>
+<div id="notes" style="display: none;">
+    
+</div>
+
+<footer>Copyright scarvesfamily&copy; <?php echo date("Y");?></footer><br>
+
+</body>
+</html>
