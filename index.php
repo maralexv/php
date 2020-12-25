@@ -1,37 +1,56 @@
-<?php include 'header.php';?>
+<?php
+// Initiate the session
+session_start();
+
+// Set cookie if not set yet
+$cookiename = "usr";
+$cookievalue;
+if(!isset($_COOKIE[$cookiename])) {
+    setcookie($cookiename, $cookievalue,  time()+(60*60*24*30), "/var/www/html"); // 60*60*24*30 = 30 days
+    // echo "(number of cookies: " . count($_COOKIE) . ")";
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes</title>
+
+    <?php require 'header.php';?>
+
+</head>
 
 <body>
 
-    <div class="container-md">
-        <div class="row" id="userin">
-            <div class="col-sm">
-                <form class="form-inline" method="POST" action="">
-                    <input type="email" class="form-control" id="user" name="user" placeholder="Email: you@example.com">
-                    <input type="submit" value="submit">
-                </form>
-            </div>
-        </div>
-        <br>
+<div id="login">
+    <!-- <form id="loginform" action=""> -->
+        <label for="user">provide your email please:</label>
+        <input type="email" id="user" name="user">
+        <button onclick= "getUser()">submit</button>
+    <!-- </form> -->
+</div>
 
-        <div class="row" id="userout">
-           
-        </div>
+<div id="userout" style="display: none;">
+    <p><span id="welcome"></span><strong><span id="useremail"></span></strong></p>
+</div>
 
-        <div class="row">
-            <div class="col-sm">
-                <form class="form-inline" method="POST" action="">
-                    <input type="text" class="form-control" id="newnote" name="newnote" placeholder="New note"/>
-                    <input type="submit" name="submit">
-                </form>
-            </div>
-        </div>
-        <br>
+<div id="newnoteform" style="display: none;">
+    <form id="newnote" action="">
+        <label for="newnotetxt">add your new note:</label>
+        <textarea id="newnotetxt" type="text" name="newnote" rows="3" cols="50">
+        </textarea>
+        <input id="submit" type="submit" value="add">
+    </form>
+</div>
+<br>
 
-        <div class="row" id="notes">
-            <div class="col-sm">
-                <p>notes go here</p>
-            </div>
-        </div>
-    </div>
+<div id="yn" style="display: none;"><span></span></div>
+<div id="notes" style="display: none;">
+    
+</div>
 
-<?php include 'footer.php';?>
+<footer>Copyright scarvesfamily&copy; <?php echo date("Y");?></footer><br>
+
+</body>
+</html>
