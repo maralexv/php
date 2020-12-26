@@ -24,7 +24,6 @@ if ($q !== "") {
     $sql = "SELECT * FROM users";
     $result = $conn->query($sql);
     $userflag = 0;
-    $user_id = 0;
     while ($row = $result->fetch_assoc()) {
         if ($q == $row['UserName']) {
             // Change flag to 1 if user found in the user db (returning user)
@@ -34,17 +33,20 @@ if ($q !== "") {
     }
 
     if ($userflag == 0) {
-        $data = array("how do you do ", $q);
-        echo json_encode($data);
-
         $sql = "INSERT INTO users (UserName) VALUES ('$q')";
 
-        if ($conn->query($sql) === TRUE) {
-            echo "<br>
-            <small>(new user " . $q . " regestered successfully)</small>";
-          } else {
+        if ($conn->query($sql) !== TRUE) {
             echo "Error: " . $sql . " " . $conn->error;
-          }
+        };
+        
+        $user_id = $conn->insert_id;
+        // $sql = "SELECT UserID FROM user WHERE UserName=('$q')";
+        // $result = $conn->query($sql);
+        // $result = $result->fetch_assoc();
+        // $user_id = $result['UserID'];
+
+        $data = array("how do you do ", $q, $user_id);
+        echo json_encode($data);
 
     } else {
         $data = array("welcome back ", $q, $user_id);

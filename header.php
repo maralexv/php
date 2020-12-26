@@ -48,6 +48,7 @@
         // Function to identify returning user or to register new user
         function getUser() {
             const user = document.getElementById("user").value;
+            console.log(user);
 
             if (user.length == 0) {
                 document.getElementById("useremail").innerHTML = "";
@@ -56,10 +57,10 @@
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
                         let result = JSON.parse(this.responseText);
-                        document.getElementById("userout").style.display = "block";
-                        document.getElementById("newnoteform").style.display = "block";
                         document.getElementById("welcome").innerHTML = result[0] + " ";
                         document.getElementById("useremail").innerHTML = result[1];
+                        document.getElementById("userout").style.display = "block";
+                        document.getElementById("newnoteform").style.display = "block";
                         document.getElementById("login").style.display = "none";
 
                         // Set the user ID in local storage
