@@ -10,6 +10,7 @@ if(!isset($_COOKIE[$cookiename])) {
     // echo "(number of cookies: " . count($_COOKIE) . ")";
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head> 
