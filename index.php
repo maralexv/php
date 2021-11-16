@@ -39,7 +39,7 @@ if(!isset($_COOKIE[$cookiename])) {
 <div id="newnoteform" style="display: none;">
     <form id="newnote" action="">
         <label for="newnotetxt">add your new note:</label>
-        <textarea id="newnotetxt" type="text" name="newnote" rows="3" cols="50">
+        <textarea id="newnotetxt" type="text" name="newnote" rows="3" cols="50" >
         </textarea>
         <input id="submit" type="submit" value="add">
     </form>
