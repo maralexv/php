@@ -5,8 +5,6 @@
             font-family: Arial, Helvetica, sans-serif;
             color: whitesmoke;
             background-color: #006400;
-            border-width: 10px;
-            border-color: #8B0000;
         }
 
         div {
@@ -82,7 +80,7 @@
             if (data.length == 0) {
                 document.getElementById("yn").innerHTML = "";
             } else {
-                document.getElementById("yn").firstChild.innerHTML = "your notes:";
+                document.getElementById("yn").firstChild.innerHTML = "Your Christmas wish list:";
                 let xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -90,7 +88,6 @@
 
                         if (result !== null) {
                         result.forEach(displayNote);
-                        
                         document.getElementById("yn").style.display = "block";
                         document.getElementById("notes").style.display = "block";
                         }

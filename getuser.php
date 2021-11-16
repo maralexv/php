@@ -45,11 +45,11 @@ if ($q !== "") {
         // $result = $result->fetch_assoc();
         // $user_id = $result['UserID'];
 
-        $data = array("how do you do ", $q, $user_id);
+        $data = array("How do you do ", $q, $user_id);
         echo json_encode($data);
 
     } else {
-        $data = array("welcome back ", $q, $user_id);
+        $data = array("Welcome back ", $q, $user_id);
         echo json_encode($data);
     }
 

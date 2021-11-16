@@ -16,7 +16,7 @@ if(!isset($_COOKIE[$cookiename])) {
 <head> 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Notes</title>
+    <title>Santa Letter</title>
 
     <?php require 'header.php';?>
 
@@ -26,8 +26,8 @@ if(!isset($_COOKIE[$cookiename])) {
 
 <div id="login">
     <!-- <form id="loginform" action=""> -->
-        <label for="user">provide your email please:</label>
-        <input type="email" id="user" name="user">
+        <label for="user">Type in your email please:</label>
+        <input type="email" id="user" name="user" placeholder="name@email.com">
         <button onclick= "getUser()">submit</button>
     <!-- </form> -->
 </div>
@@ -38,8 +38,9 @@ if(!isset($_COOKIE[$cookiename])) {
 
 <div id="newnoteform" style="display: none;">
     <form id="newnote" action="">
-        <label for="newnotetxt">add your new note:</label>
-        <textarea id="newnotetxt" type="text" name="newnote" rows="3" cols="50" >
+        <!-- <label for="newnotetxt">add your new note:</label> --!>
+        <textarea id="newnotetxt" type="text" name="newnote" rows="12" cols="64">
+		Type here and add to your Christmas wish list...
         </textarea>
         <input id="submit" type="submit" value="add">
     </form>
