@@ -38,9 +38,9 @@ if(!isset($_COOKIE[$cookiename])) {
 
 <div id="newnoteform" style="display: none;">
     <form id="newnote" action="">
-        <!-- <label for="newnotetxt">add your new note:</label> --!>
+        <!-- <label for="newnotetxt">add your new note:</label> -->
         <textarea id="newnotetxt" type="text" name="newnote" rows="12" cols="64">
-		Type here and add to your Christmas wish list...
+Type here and add to your Christmas wish list...
         </textarea>
         <input id="submit" type="submit" value="add">
     </form>
