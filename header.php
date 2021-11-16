@@ -4,9 +4,7 @@
             margin: 3rem;
             font-family: Arial, Helvetica, sans-serif;
             color: whitesmoke;
-            background-color: #006400;
-            border-width: 10px;
-            border-color: #8B0000;
+            background-color: #151515;
         }
 
         div {
