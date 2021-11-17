@@ -48,11 +48,12 @@ Type here and add to your Christmas wish list...
 <br>
 
 <div id="yn" style="display: none;"><span></span></div>
-<div id="notes" style="display: none;">
-    
-</div>
+<div id="notes" style="display: none;"></div>
 
-<footer>Copyright scarvesfamily&copy; <?php echo date("Y");?></footer><br>
+<footer>
+    <a href="results.php" style="color: white;">results</a><br><br>
+    Copyright scarvesfamily&copy; <?php echo date("Y");?>
+</footer><br>
 
 </body>
 </html>
