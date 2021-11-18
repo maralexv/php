@@ -24,6 +24,8 @@
         }
 
         textarea {
+            width: 95%;
+            hight: auto;
             margin-right: 8px;
         }
 
@@ -44,6 +46,12 @@
             bottom: 10px;
             width: 100%;
             text-align: center;
+        }
+
+        .del {
+            float: right;
+            margin-right: 15px;
+            margin-left: 10px;
         }
 
         .note {
@@ -84,13 +92,13 @@
             }
          };
 
-        // Function to fetch old notes of the user from the db
+        // Function to fetch old notes of the user (only current year) from the db
         function fetchNotes(data) {
 
             if (data.length == 0) {
                 document.getElementById("yn").innerHTML = "";
             } else {
-                document.getElementById("yn").firstChild.innerHTML = "Your Christmas wish list:";
+                document.getElementById("yn").firstChild.innerHTML = "Your Christmas wish list for this year:";
                 let xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
@@ -110,17 +118,42 @@
 
         // Function to add notes, retrived from the db to the 'notes' div
         function displayNote(item) {
+            // Creat del button
+            let delb = document.createElement('button');
+                delb.innerHTML = "del";
+                // Apply css style to the del button
+                delb.classList.add('del');
+                delb.onclick = function(e) {var target = e.target; target.parentNode.parentNode.removeChild(target.parentNode); removeNote(item.NoteID)};
+
             // Create new paragraph element for the note
             let p = document.createElement('p');
                 // Add note text to just created paragraph^^
                 p.innerHTML = item.NoteText;
                 // Apply css style to the note
                 p.classList.add('note');
+                // Add del buton to the paragraph
+                p.append(delb);
 
             // Append 'notes' div with newly created note
             document.getElementById("notes").append(p);
         };
 
+        // Function to send note id to server to remove note from db
+        function removeNote(id) {
+
+            let xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    let result = this.responseText;
+                    console.log(result);
+                };
+            };
+            xmlhttp.open("GET", "removenote.php?q=" + id, true);
+            xmlhttp.send();
+            
+        };
+
+        // Fucntion to record new note in db
         function recordNewNote(note, uid) {
             
             const data = [note, uid];
@@ -193,6 +226,7 @@
                 // Stop form from submitting
                 return false;
             }
+
         });
     </script>
 
