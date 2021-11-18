@@ -48,7 +48,7 @@
                 echo "</table>";
 
             } else {
-                echo "Nothing on record yet...";
+                echo "<p style='text-align: center;'>Nothing on record yet...<p>";
             }
 
         ?>
