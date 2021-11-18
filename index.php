@@ -39,19 +39,18 @@ if(!isset($_COOKIE[$cookiename])) {
 <div id="newnoteform" style="display: none;">
     <form id="newnote" action="">
         <!-- <label for="newnotetxt">add your new note:</label> -->
-        <textarea id="newnotetxt" type="text" name="newnote" rows="12" cols="64">
+        <textarea id="newnotetxt" type="text" name="newnote" rows="2" cols="64">
 Type here and add to your Christmas wish list...
         </textarea>
         <input id="submit" type="submit" value="add">
     </form>
 </div>
-<br>
 
 <div id="yn" style="display: none;"><span></span></div>
 <div id="notes" style="display: none;"></div>
 
 <footer>
-    <a href="results.php" style="color: white;">results</a><br><br>
+    <a href="results.php"><button>click here to see all whishes</button></a><br><br>
     Copyright scarvesfamily&copy; <?php echo date("Y");?>
 </footer><br>
 

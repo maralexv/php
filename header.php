@@ -27,6 +27,16 @@
             margin-right: 8px;
         }
 
+        table, th, td {
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 87%;
+        }
 
         footer {
             position: fixed;
@@ -109,43 +119,6 @@
 
             // Append 'notes' div with newly created note
             document.getElementById("notes").append(p);
-        };
-
-        // Function to fetch ALL notes of ALL users from the db
-        function fetchAllNotes(data) {
-
-            if (data.length == 0) {
-                document.getElementById("allnotes").innerHTML = "";
-            } else {
-                document.getElementById("allnotes").firstChild.innerHTML = "All Christmas wish lists:";
-                let xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        let result = JSON.parse(this.responseText);
-
-                        if (result !== null) {
-                        result.forEach(displayUserAndNote);
-                        document.getElementById("allnotes").style.display = "block";
-                        document.getElementById("wishes").style.display = "block";
-                        }
-                    }
-                };
-                xmlhttp.open("GET", "fetchnotes.php?q=" + data, true);
-                xmlhttp.send();
-            }
-        };
-
-        // Function to display ALL users and All notes, retrived from the db
-        function displayUserAndNote(item) {
-            // Create new paragraph element for the note
-            let p = document.createElement('p');
-                // Add user name & note text to just created paragraph^^
-                p.innerHTML = item.UserName + ": " + item.NoteText;
-                // Apply css style to the note
-                p.classList.add('note');
-
-            // Append 'wishes' div with newly created note
-            document.getElementById("wishes").append(p);
         };
 
         function recordNewNote(note, uid) {
