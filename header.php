@@ -27,6 +27,16 @@
             margin-right: 8px;
         }
 
+        table, th, td {
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid grey;
+            border-collapse: collapse;
+        }
+
+        table {
+            width: 87%;
+        }
 
         footer {
             position: fixed;
@@ -74,7 +84,7 @@
             }
          };
 
-        // Function to fetch old notes of the user fomr the db
+        // Function to fetch old notes of the user from the db
         function fetchNotes(data) {
 
             if (data.length == 0) {
@@ -98,7 +108,7 @@
             }
         };
 
-        // Function to add old notes, retrived from the db to the 'notes' div
+        // Function to add notes, retrived from the db to the 'notes' div
         function displayNote(item) {
             // Create new paragraph element for the note
             let p = document.createElement('p');
@@ -110,7 +120,6 @@
             // Append 'notes' div with newly created note
             document.getElementById("notes").append(p);
         };
-
 
         function recordNewNote(note, uid) {
             
