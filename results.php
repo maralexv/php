@@ -32,7 +32,7 @@
             $sql = "SELECT users.UserName, notes.NoteText, notes.Time, notes.NoteID
                     FROM notes 
                     INNER JOIN users ON notes.User_id=users.UserID 
-                    WHERE MONTH(notes.Time)>2 AND YEAR(notes.Time)=$currentyear  
+                    WHERE YEAR(notes.Time)=$currentyear  
                     ORDER BY users.UserName 
                     ASC;";
             $result = $conn->query($sql);
@@ -40,10 +40,10 @@
             // loop through the result  
             if ($result->num_rows > 0) {
                 // print out (display) the table of wishes fior each user
-                echo "<table><tr><th>Authors' emails</th><th>Their wishes</th><th></th></tr>";
+                echo "<table><tr><th>Authors' emails</th><th>Their wishes</th></tr>";
                 while ($row = $result->fetch_assoc()) {
                     // display users and notes
-                    echo "<tr><td>" . $row["UserName"]. "</td><td>" . $row["NoteText"]. "</td><td>x</td></tr>";
+                    echo "<tr><td>" . $row["UserName"]. "</td><td>" . $row["NoteText"]. "</td></tr>";
                 }
                 echo "</table>";
             }
