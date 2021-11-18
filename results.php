@@ -46,7 +46,10 @@
                     echo "<tr><td>" . $row["UserName"]. "</td><td>" . $row["NoteText"]. "</td></tr>";
                 }
                 echo "</table>";
-            }
+
+            } else {
+                echo "<p style='text-align: center;'>Nothing on record yet...<p>";
+            };
 
         ?>
 
