@@ -49,7 +49,7 @@
 
             } else {
                 echo "<p style='text-align: center;'>Nothing on record yet...<p>";
-            }
+            };
 
         ?>
 
