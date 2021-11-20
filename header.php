@@ -63,14 +63,29 @@
     </style>
 
     <script>
+
+        // Function to validate email input
+        function validateEmail(email) {
+            const re = /\S+@\S+\.\S+/;
+            return re.test(String(email).toLowerCase());
+        };
+
         // Function to identify returning user or to register new user
         function getUser() {
-            const user = document.getElementById("user").value;
-            console.log(user);
-
             if (user.length == 0) {
                 document.getElementById("useremail").innerHTML = "";
             } else {
+                const user = document.getElementById("user").value;
+                console.log(user);
+
+                //Validate email input 
+                let checkEmail = validateEmail(user);
+                console.log(checkEmail);
+                if (checkEmail == false) {
+                    alert("Email format is invalid. Please enter valid email.");
+                    return false;
+                };
+
                 let xmlhttp = new XMLHttpRequest();
                 xmlhttp.onreadystatechange = function() {
                     if (this.readyState == 4 && this.status == 200) {
