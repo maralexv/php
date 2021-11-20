@@ -43,9 +43,11 @@
         footer {
             position: fixed;
             left: 0;
-            bottom: 10px;
+            bottom: 0px;
             width: 100%;
             text-align: center;
+            background-color: #006400;
+            z-index: 1;
         }
 
         .del {
@@ -82,6 +84,7 @@
                 let checkEmail = validateEmail(user);
                 console.log(checkEmail);
                 if (checkEmail == false) {
+                    document.getElementById("useremail").innerHTML = "";
                     alert("Email format is invalid. Please enter valid email.");
                     return false;
                 };
